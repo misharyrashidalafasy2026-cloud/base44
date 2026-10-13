@@ -1,0 +1,104 @@
+{
+  "name": "PartnerApplication",
+  "type": "object",
+  "properties": {
+    "organization_legal_name": {
+      "type": "string",
+      "description": "Legal name of the applying organization"
+    },
+    "organization_type": {
+      "type": "string",
+      "enum": [
+        "Business / Corporate",
+        "Non-Profit / NGO",
+        "Educational Institution",
+        "Media / Marketing",
+        "Government",
+        "Other"
+      ]
+    },
+    "website": {
+      "type": "string",
+      "description": "Organization website URL"
+    },
+    "headquarters": {
+      "type": "string",
+      "description": "Country or headquarters location"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "work_email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "partnership_category": {
+      "type": "string",
+      "enum": [
+        "Corporate Financial Sponsor",
+        "In-Kind / Service Provider",
+        "Joint Event / Program Ally",
+        "Marketing / Media Partner"
+      ]
+    },
+    "estimated_commitment": {
+      "type": "string",
+      "enum": [
+        "Under $2,500",
+        "$2,500\u2013$10,000",
+        "$10,000\u2013$50,000",
+        "$50,000+"
+      ]
+    },
+    "proposed_goals": {
+      "type": "string",
+      "description": "Resources, services, or support the organization aims to contribute"
+    },
+    "authorization_confirmed": {
+      "type": "boolean",
+      "default": false
+    },
+    "terms_confirmed": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending_review",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending_review"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "description": "Email of the admin who reviewed the application"
+    },
+    "admin_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "organization_legal_name",
+    "organization_type",
+    "headquarters",
+    "contact_name",
+    "job_title",
+    "work_email",
+    "phone",
+    "partnership_category",
+    "proposed_goals",
+    "authorization_confirmed",
+    "terms_confirmed"
+  ]
+}

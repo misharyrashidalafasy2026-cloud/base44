@@ -1,0 +1,52 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "funding_goal": {
+      "type": "number"
+    },
+    "amount_raised": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "active",
+        "completed"
+      ],
+      "default": "planned"
+    },
+    "completion_target": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_demo": {
+      "type": "boolean",
+      "default": true
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Project image URL for visual presentation"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "location",
+    "funding_goal",
+    "status"
+  ]
+}

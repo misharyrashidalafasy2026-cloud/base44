@@ -1,0 +1,47 @@
+{
+  "name": "AgentReport",
+  "type": "object",
+  "properties": {
+    "reporter_name": {
+      "type": "string"
+    },
+    "reporter_email": {
+      "type": "string"
+    },
+    "agent_name": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "misconduct",
+        "misrepresentation",
+        "fraudulent_payment",
+        "false_promises",
+        "unauthorized_fundraising",
+        "suspicious_behavior"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "under_review",
+        "resolved"
+      ],
+      "default": "submitted"
+    }
+  },
+  "required": [
+    "reporter_name",
+    "reporter_email",
+    "report_type",
+    "description"
+  ]
+}

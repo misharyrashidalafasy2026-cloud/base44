@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The role of the user in the app",
+      "enum": [
+        "admin",
+        "user"
+      ]
+    },
+    "referral_information": {
+      "type": "string",
+      "description": "Agent or referral source that introduced the user to the platform"
+    },
+    "partner_status": {
+      "type": "string",
+      "description": "Partnership application status",
+      "enum": [
+        "none",
+        "pending_review",
+        "approved",
+        "rejected"
+      ],
+      "default": "none"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    }
+  },
+  "required": [
+    "role"
+  ],
+  "name": "User",
+  "type": "object"
+}

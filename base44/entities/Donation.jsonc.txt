@@ -1,0 +1,85 @@
+{
+  "name": "Donation",
+  "type": "object",
+  "properties": {
+    "donation_id": {
+      "type": "string"
+    },
+    "donor_name": {
+      "type": "string"
+    },
+    "donor_email": {
+      "type": "string"
+    },
+    "donor_country": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "giving_purpose": {
+      "type": "string",
+      "enum": [
+        "Zakat",
+        "Sadaqah",
+        "Sadaqah Jariyah",
+        "Waqf",
+        "Emergency Relief",
+        "Community Development"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "fund": {
+      "type": "string"
+    },
+    "cryptocurrency": {
+      "type": "string",
+      "enum": [
+        "Bitcoin",
+        "Ethereum",
+        "BNB",
+        "Solana"
+      ]
+    },
+    "transaction_hash": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "awaiting_payment",
+        "submitted",
+        "under_review",
+        "processing",
+        "approved",
+        "completed",
+        "action_required",
+        "rejected"
+      ],
+      "default": "awaiting_payment"
+    },
+    "anonymous": {
+      "type": "boolean",
+      "default": false
+    },
+    "dedication": {
+      "type": "string"
+    },
+    "agent_info": {
+      "type": "string"
+    },
+    "receipt_number": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "donor_name",
+    "donor_email",
+    "giving_purpose",
+    "amount",
+    "fund",
+    "cryptocurrency"
+  ]
+}

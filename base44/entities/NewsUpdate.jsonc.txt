@@ -1,0 +1,68 @@
+{
+  "name": "NewsUpdate",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Headline of the news update"
+    },
+    "content": {
+      "type": "string",
+      "description": "Body text of the news update"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Public image URL for the news update"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Video URL (YouTube, Vimeo, or direct MP4 link)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "update",
+        "announcement",
+        "emergency",
+        "report"
+      ],
+      "default": "update"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "published"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Author or source of the update"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "category",
+    "status"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
